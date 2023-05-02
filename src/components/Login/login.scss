@@ -1,0 +1,50 @@
+@import "../../styles/abstract/variables";
+
+.login-page__container {
+    width: 100%;
+    height: 100vh;
+    background-color: $color-background;
+    display: flex;
+
+    .login-page__contents-container{
+        width: 80%;
+        margin-top: 5rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &-image-container {
+        height: 100%;
+        width: 50%;
+        .illustrator-image__container {
+            margin-top: 6rem;
+        }
+
+        .logo-image__container {
+            margin-left: 5px;
+        }
+    }
+    
+    &-form-container {
+        height: 100%;
+        width: 50%;
+        box-shadow: 0px 15px 90px rgba(0, 0, 0, 0.03);
+
+        .form__contents {
+            margin-top: 8rem;
+        }
+
+        h2 {
+            color: $color-secondary;
+            font-weight: 700;
+            font-size: 2.2rem;
+        }
+
+        p {
+            color: $color-secondary;
+            font-weight: 300;
+            font-size: 18px;
+            line-height: 2;
+        }
+    }
+}
