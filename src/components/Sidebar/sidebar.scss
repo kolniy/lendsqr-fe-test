@@ -1,0 +1,56 @@
+@import "../../styles/abstract/variables";
+
+.sidebar {
+    width: 283px;
+    &-contents__container {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    &-menu {
+        width: 100%;
+        .dashboard-link {
+            width: 100%;
+        }
+
+        .dashboard-link-item {
+            display: flex;
+        }
+
+        .link-item-menu {
+            margin-right: 5px;
+        }
+    }
+}
+
+
+.organization-switcher__container {
+    width: 100%;
+}
+
+.organization-switcher {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+
+    p {
+        color: $color-secondary;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 19px;
+    }
+
+    .pre-icon {
+        margin-right: 5px;
+        color: $color-secondary;
+    }
+
+    .post-icon {
+        margin-left: 4px;
+        font-size: 28px;
+        color: $color-secondary;
+    }
+}

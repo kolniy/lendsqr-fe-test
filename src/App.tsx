@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
 import './App.scss';
 
 import Login from './components/Login/Login';
-import Task from './components/Task';
+import Dashboard from './components/Dashboard/Dashboard';
 
 function App() {
 
@@ -11,7 +11,7 @@ function App() {
     <Router>
         <Routes>
           <Route path="/" element={<Login />} />
-          <Route path="/create" element={<Task />} />
+          <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
     </Router>
   </>

@@ -1,3 +1,5 @@
+import React from "react"
+import { useNavigate } from "react-router-dom"
 import Logo from '../Logo/Logo'
 import loginPageImage from "../../images/login-page-image.png"
 
@@ -5,6 +7,14 @@ import "../../styles/abstract/_variables.scss"
 import "./login.scss"
 
 const Login = () => {
+
+  const navigate = useNavigate()
+
+  const navigateToDashboard = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    navigate("/dashboard")
+  }
+
   return <>
     <div className="login-page__container">
 
@@ -23,9 +33,9 @@ const Login = () => {
              <div className="form__contents">
                <h2>Welcome!</h2>
                 <p>Enter details to login</p>
-                <form className='form'>
+                <form onSubmit={navigateToDashboard} className='form'>
                   <div className="form-group">
-                    <input className='form-input' required placeholder='Email' type='text'></input>
+                    <input className='form-input' required placeholder='Email' type='email'></input>
                   </div>
                   <div className="form-group">
                     <div className="form-input__container">
