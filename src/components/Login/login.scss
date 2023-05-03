@@ -141,3 +141,49 @@
         }
     }
 }
+
+
+@media (max-width: 1300px) {
+    .login-page__container {
+        height: fit-content;
+        &-image-container {
+            .illustrator-image__container {
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 780px) {
+    .login-page__container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .login-page__contents-container{
+            width: 90%;
+            margin-top: 2rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        &-image-container {
+            width: 100%;
+            height: auto;
+        }
+
+        &-form-container {
+            height: auto;
+            width: 100%;
+            box-shadow: none;
+            margin-bottom: 2rem;
+
+            .form__contents {
+                width: 100%;
+            }
+        }
+    }
+}

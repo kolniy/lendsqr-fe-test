@@ -25,11 +25,11 @@ const Login = () => {
                 <p>Enter details to login</p>
                 <form className='form'>
                   <div className="form-group">
-                    <input className='form-input' required={true} placeholder='Email' type='text'></input>
+                    <input className='form-input' required placeholder='Email' type='text'></input>
                   </div>
                   <div className="form-group">
                     <div className="form-input__container">
-                      <input type="password" required={true} placeholder='Password' className="input-text" />
+                      <input type="password" required placeholder='Password' className="input-text" />
                       <div className='input-cta__text'>show</div>
                     </div>
                   </div>
