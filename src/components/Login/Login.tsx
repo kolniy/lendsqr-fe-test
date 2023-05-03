@@ -23,6 +23,19 @@ const Login = () => {
              <div className="form__contents">
                <h2>Welcome!</h2>
                 <p>Enter details to login</p>
+                <form className='form'>
+                  <div className="form-group">
+                    <input className='form-input' required={true} placeholder='Email' type='text'></input>
+                  </div>
+                  <div className="form-group">
+                    <div className="form-input__container">
+                      <input type="password" required={true} placeholder='Password' className="input-text" />
+                      <div className='input-cta__text'>show</div>
+                    </div>
+                  </div>
+                  <p className='forgot-password__text'>forgot password?</p>
+                  <button type='submit' className='btn-login__click'>Log In</button>
+                </form>
              </div>
           </div>
        </div>
