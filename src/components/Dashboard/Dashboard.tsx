@@ -1,9 +1,9 @@
 import React from 'react'
-import Sidebard from '../Sidebar/Sidebard'
+import Layout from '../DashboardLayout/Layout'
 
 const Dashboard = () => {
   return <>
-    <Sidebard />
+    <Layout />
   </>
   
 }

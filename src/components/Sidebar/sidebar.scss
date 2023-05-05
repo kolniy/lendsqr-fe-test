@@ -2,13 +2,22 @@
 
 .sidebar {
     width: 283px;
+    height: 100vh;
+    margin-top: 100px;
+    // overflow-y: auto;
+    position: fixed;
+    left: 0;
+    top: 0;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.04);
     &-contents__container {
-        width: 80%;
+        width: 86%;
         margin: 0 auto;
     }
 
     &-menu {
         width: 100%;
+        margin-top: 1.8rem;
+
         .dashboard-link {
             width: 100%;
         }
@@ -17,8 +26,47 @@
             display: flex;
         }
 
-        .link-item-menu {
-            margin-right: 5px;
+        .link-item-menu-icon {
+            margin-right: 10px;
+            color: $color-secondary;
+        }
+
+        .nav-links {
+            width: 100%;
+        }
+
+        .dashboard-link-text {
+            width: 100%;
+            margin: 1rem 0;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 13px;
+            text-transform: uppercase;
+            line-height: 14px;
+            color: $color-secondary;
+        }
+
+        .dashboard-link-item {
+            width: 100%;
+            cursor: pointer;
+            padding: 0.85rem 5px;
+            border-left: 5px solid transparent;
+            transition: all .3s;
+            color: $color-secondary;
+        }
+
+        .dashboard-link-item:hover{
+            background-color: $color-primary-light;
+            border-left: 5px solid $color-primary;
+        }
+
+        .dashboard-link-item a {
+            text-decoration: none;
+            font-style: normal;
+            font-weight: 300;
+            font-size: 15px;
+            line-height: 19px;
+            color: $color-secondary;
         }
     }
 }
@@ -26,14 +74,14 @@
 
 .organization-switcher__container {
     width: 100%;
+    margin-top: 2rem;
 }
 
 .organization-switcher {
     display: flex;
     align-items: center;
     width: 100%;
-    margin-top: 5rem;
-    margin-bottom: 3rem;
+    cursor: pointer;
 
     p {
         color: $color-secondary;
