@@ -2,12 +2,8 @@
 
 .sidebar {
     width: 283px;
-    height: 100vh;
-    margin-top: 100px;
-    // overflow-y: auto;
-    position: fixed;
-    left: 0;
-    top: 0;
+    height: calc(100vh - 100px);
+    overflow-y: auto;
     box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.04);
     &-contents__container {
         width: 86%;

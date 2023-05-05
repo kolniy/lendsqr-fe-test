@@ -1,0 +1,10 @@
+.dashboard-layout {
+    height: fit-content;
+
+    &__page-contents {
+        width: 100%;
+        height: fit-content;
+        display: flex;
+    }
+}
+
