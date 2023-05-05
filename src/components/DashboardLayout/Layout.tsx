@@ -14,9 +14,11 @@ const Layout: React.FC<Props> = ({ children }) => {
         <Navbar />
         <div className="dashboard-layout__page-contents">
             <Sidebar />
-            {
-                children
-            }
+            <div className="dashboard-layout__main-contents">
+                {
+                    children
+                }
+            </div>
         </div>
     </div>
   )
