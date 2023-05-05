@@ -1,6 +1,8 @@
 import React from 'react'
 import Layout from '../DashboardLayout/Layout'
 
+import "./dashboard.scss"
+
 const Dashboard = () => {
   return <>
     <Layout> 
