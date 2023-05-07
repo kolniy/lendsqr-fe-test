@@ -1,3 +1,4 @@
+import React from 'react'
 import { Link } from 'react-router-dom'
 import Logo from '../Logo/Logo'
 import { FaSearch } from "react-icons/fa"
@@ -9,7 +10,12 @@ import loggedInUserImg from "../../images/loggedIn-user.png"
 import "../../styles/abstract/_variables.scss"
 import "./navbar.scss"
 
-const Navbar = () => {
+interface Props {
+  toggleMobileMenu: () => void
+  mobileMenuOpen: Boolean
+}
+
+const Navbar: React.FC<Props> = ({ mobileMenuOpen, toggleMobileMenu }) => {
   return (
     <div className='navbar'>
          <div className="navbar-brand">
@@ -49,6 +55,16 @@ const Navbar = () => {
                 </div>
              </div>
          </div>
+         <button
+            onClick={toggleMobileMenu}
+            className={`hamburger 
+            ${mobileMenuOpen === true && "open"}
+            `}
+          >
+            <span className="hamburger-top"></span>
+            <span className="hamburger-middle"></span>
+            <span className="hamburger-bottom"></span>
+           </button>
     </div>
   )
 }

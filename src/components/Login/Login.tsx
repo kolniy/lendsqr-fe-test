@@ -12,7 +12,7 @@ const Login = () => {
 
   const navigateToDashboard = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    navigate("/dashboard")
+    navigate("/dashboard/users")
   }
 
   return <>

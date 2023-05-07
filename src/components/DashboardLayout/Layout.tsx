@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import Sidebar from '../Sidebar/Sidebar'
 import Navbar from '../TopNavbar/Navbar'
 
@@ -9,11 +9,15 @@ interface Props {
 }
 
 const Layout: React.FC<Props> = ({ children }) => {
+
+  const [mobileMenuOpen, setMobileMenuOpen] = useState<Boolean>(false);
+  const toggleMobileMenu = () => setMobileMenuOpen(!mobileMenuOpen);
+
   return (
     <div className='dashboard-layout'>
-        <Navbar />
+        <Navbar mobileMenuOpen={mobileMenuOpen} toggleMobileMenu={toggleMobileMenu} />
         <div className="dashboard-layout__page-contents">
-            <Sidebar />
+            <Sidebar mobileMenuOpen={mobileMenuOpen} />
             <div className="dashboard-layout__main-contents">
                 {
                     children

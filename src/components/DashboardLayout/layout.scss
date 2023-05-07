@@ -5,13 +5,16 @@
     &__page-contents {
         width: 100%;
         height: fit-content;
-        display: flex;
+        display: flex;        
+        position: relative;
     }
 
     &__main-contents {
         flex: 1;
         height: calc(100vh - 100px);
         overflow-y: auto;
+        background-color: #fbfbfb;
+
 
         &::-webkit-scrollbar {
             width: 8px;

@@ -4,7 +4,10 @@
     width: 283px;
     height: calc(100vh - 100px);
     overflow-y: auto;
+    background-color: $color-background;
     box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.04);
+    transition: all .4s;
+    z-index: 1000 !important;
 
     &::-webkit-scrollbar {
         width: 8px;
@@ -84,9 +87,24 @@
             line-height: 19px;
             color: $color-secondary;
         }
+
+        .active {
+            background-color: $color-primary-light;
+            border-left: 5px solid $color-primary;
+        }
     }
 }
 
+.sidebar-mobile {
+    position: fixed;
+    width: 283px;
+    height: calc(100vh - 100px);
+    overflow-y: auto;
+    background-color: $color-background;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.04);
+    transition: all .4s;
+    z-index: 1000 !important;
+}
 
 .organization-switcher__container {
     width: 100%;
@@ -116,5 +134,66 @@
         margin-left: 4px;
         font-size: 28px;
         color: $color-secondary;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .sidebar {
+        width: 0;
+        position: fixed;
+
+        &::-webkit-scrollbar {
+            width: 8px;
+        }
+          
+        &::-webkit-scrollbar-track {
+            background-color: #f1f1f1;
+        }
+          
+        &::-webkit-scrollbar-thumb {
+            background-color: rgba(84, 95, 125, 0.15);
+            border-radius: 10px;
+        }
+          
+        &::-webkit-scrollbar-thumb:hover {
+            background-color: #555;
+        }
+
+        &-menu {
+            .dashboard-link {
+                width: 100%;
+            }
+
+            .link-item-menu-icon {
+                margin-right: 10px;
+                color: $color-secondary;
+                font-size: 13px;
+                opacity: 0.7;
+            }
+        
+            .nav-links {
+                width: 100%;
+            }
+        
+            .dashboard-link-text {
+                width: 100%;
+                margin: 1rem 0;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 13px;
+                text-transform: uppercase;
+                line-height: 13px;
+                color: $color-secondary;
+            }
+        
+            .dashboard-link-item a {
+                text-decoration: none;
+                font-style: normal;
+                font-weight: 300;
+                font-size: 13px;
+                line-height: 19px;
+                color: $color-secondary;
+            }
+        }
     }
 }

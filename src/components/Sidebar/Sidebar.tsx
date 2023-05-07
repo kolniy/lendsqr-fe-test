@@ -1,3 +1,4 @@
+import React from "react"
 import { Link } from "react-router-dom"
 import { AiOutlineBarChart } from "react-icons/ai"
 import { RiBriefcaseFill, RiArrowDropDownLine, RiUserSettingsLine, RiFilePaper2Line, RiTodoFill } from "react-icons/ri"
@@ -13,9 +14,15 @@ import { GoSettings } from "react-icons/go"
 import "../../styles/abstract/_variables.scss"
 import "./sidebar.scss"
 
-const Sidebard = () => {
+interface Props {
+  mobileMenuOpen: Boolean
+}
+
+const Sidebard: React.FC<Props>  = ({ mobileMenuOpen }) => {
   return (
-    <div className="sidebar">
+    <div className={`${ mobileMenuOpen === true ? 
+      "sidebar-mobile": "sidebar"
+    }`}>
         <div className="organization-switcher__container">
             <div className="sidebar-contents__container">
                 <div className="organization-switcher">
@@ -43,7 +50,7 @@ const Sidebard = () => {
                   Customers
                 </div>
               </li>
-              <li className="dashboard-link-item">
+              <li className="dashboard-link-item active">
                 <div className="sidebar-contents__container">
                   <Link to="/dashboard">
                     <FiUsers className="link-item-menu-icon" />
