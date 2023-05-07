@@ -34,10 +34,12 @@ const Navbar: React.FC<Props> = ({ mobileMenuOpen, toggleMobileMenu }) => {
             </div>
              <div className="navbar-links__container">
                 <div className="documentation-link">
-                    <Link to="/dashboard">Docs</Link>
+                    <Link to="/dashboard/docs">Docs</Link>
                 </div>
                 <div className="notification-icon">
+                    <Link to="/dashboard/notification">
                     <IoMdNotificationsOutline className='navbar-bell-icon' />
+                    </Link>
                 </div>
                 <div className="loggedin-user__info">
                     <div className="logged-user-img">

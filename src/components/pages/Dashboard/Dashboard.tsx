@@ -1,7 +1,8 @@
 import React from 'react'
-import Layout from '../DashboardLayout/Layout'
+import Layout from '../../DashboardLayout/Layout'
 
-import "../../styles/abstract/_variables.scss"
+import "../../../styles/abstract/_variables.scss"
+
 import "./dashboard.scss"
 
 const Dashboard = () => {

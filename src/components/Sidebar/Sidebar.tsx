@@ -54,14 +54,14 @@ const Sidebard: React.FC<Props> = ({ mobileMenuOpen }) => {
 
         <div className="sidebar-menu">
             <div className="dashboard-link-item">
+              <Link to="/dashboard/index">
               <div className="sidebar-contents__container">
-                 <Link to="/dashboard/index">
                   <IoHomeOutline className="link-item-menu-icon" />
                     <span>Dashboard</span>
-                  </Link>
                    <div>
                 </div>
               </div>
+              </Link>
             </div>
             <ul className="nav-links">
               <li className="dashboard-link-text">
@@ -70,68 +70,68 @@ const Sidebard: React.FC<Props> = ({ mobileMenuOpen }) => {
                 </div>
               </li>
               <li className="dashboard-link-item active">
+                <Link to="/dashboard/users">
                 <div className="sidebar-contents__container">
-                  <Link to="/dashboard/users">
                     <FiUsers className="link-item-menu-icon" />
                     <span>Users</span>
-                  </Link>
                 </div>
-              </li>
-              <li className="dashboard-link-item">
-                <div className="sidebar-contents__container">
-                  <Link to="/dashboard/guarantors">
-                    <MdOutlineGroups className="link-item-menu-icon" />
-                    <span>Guarantors</span>
-                  </Link>
-                </div>
-              </li>
-              <li className="dashboard-link-item">
-                <div className="sidebar-contents__container">
-                <Link to="/dashboard/loan">
-                  <TbMoneybag className="link-item-menu-icon" />
-                  <span>Loans</span>
                 </Link>
-                </div>
               </li>
               <li className="dashboard-link-item">
-                <div className="sidebar-contents__container">
+                  <Link to="/dashboard/guarantors">
+                    <div className="sidebar-contents__container">
+                        <MdOutlineGroups className="link-item-menu-icon" />
+                        <span>Guarantors</span>
+                    </div>
+                  </Link>
+              </li>
+              <li className="dashboard-link-item">
+                <Link to="/dashboard/loan">
+                  <div className="sidebar-contents__container">
+                    <TbMoneybag className="link-item-menu-icon" />
+                    <span>Loans</span>
+                  </div>
+                </Link>
+              </li>
+              <li className="dashboard-link-item">
                 <Link to="/dashboard/model">
+                <div className="sidebar-contents__container">
                   <FaRegHandshake className="link-item-menu-icon" />
                   <span>Decision Models</span>
-                </Link>
                 </div>
+                </Link>
               </li>
               <li className="dashboard-link-item">
-                <div className="sidebar-contents__container">
                 <Link to="/dashboard/saving">
+                <div className="sidebar-contents__container">
                   <MdOutlineSavings className="link-item-menu-icon" />
                   <span>Savings</span>
-                </Link>
                 </div>
+                </Link>
               </li>
               <li className="dashboard-link-item">
-                <div className="sidebar-contents__container">
                 <Link to="/dashboard/request">
+                <div className="sidebar-contents__container">
                   <GiReceiveMoney className="link-item-menu-icon" />
                   <span>Loan Requests</span>
-                </Link>
                 </div>
+                </Link>
               </li>
               <li className="dashboard-link-item">
-                <div className="sidebar-contents__container">
                 <Link to="/dashboard/whitelist">
+                <div className="sidebar-contents__container">
                   <FiUserCheck className="link-item-menu-icon" />
                   <span>Whitelist</span>
-                </Link>
                 </div>
+                </Link>
               </li>
               <li className="dashboard-link-item">
-                <div className="sidebar-contents__container">
                 <Link to="/dashboard/karma">
+                <div className="sidebar-contents__container">
                   <FiUserX className="link-item-menu-icon" />
                   <span>Karma</span>
-                </Link>
                 </div>
+                </Link>
               </li>
               <li className="dashboard-link-text">
                 <div className="sidebar-contents__container">
@@ -139,76 +139,76 @@ const Sidebard: React.FC<Props> = ({ mobileMenuOpen }) => {
                 </div>
               </li>
               <li className="dashboard-link-item">
-                <div className="sidebar-contents__container">
                 <Link to="/dashboard/organization">
+                <div className="sidebar-contents__container">
                   <RiBriefcaseFill className="link-item-menu-icon" />
                   <span>Organization</span>
-                </Link>
                 </div>
+                </Link>
               </li>
               <li className="dashboard-link-item">
-                <div className="sidebar-contents__container">
                 <Link to="/dashboard/product">
+                <div className="sidebar-contents__container">
                   <GiReceiveMoney className="link-item-menu-icon" />
                   <span>Loan Products</span>
-                </Link>
                 </div>
+                </Link>
               </li>
               <li className="dashboard-link-item">
-                <div className="sidebar-contents__container">
                 <Link to="/dashboard/saving/product">
+                <div className="sidebar-contents__container">
                   <GiBank className="link-item-menu-icon" />
                   <span>Savings Products</span>
-                </Link>
                 </div>
+                </Link>
               </li>
               <li className="dashboard-link-item">
-                <div className="sidebar-contents__container">
                 <Link to="/dashboard/fees">
+                <div className="sidebar-contents__container">
                   <FiDatabase className="link-item-menu-icon" />
                   <span>Fees and Charges</span>
-                </Link>
                 </div>
+                </Link>
               </li>
               <li className="dashboard-link-item">
-                <div className="sidebar-contents__container">
                 <Link to="/dashboard/transaction">
+                <div className="sidebar-contents__container">
                   <TbArrowsLeftRight className="link-item-menu-icon" />
                   <span>Transactions</span>
-                </Link>
                 </div>
+                </Link>
               </li>
               <li className="dashboard-link-item">
-               <div className="sidebar-contents__container">
                 <Link to="/dashboard/service">
+               <div className="sidebar-contents__container">
                   <GiBoomerangSun className="link-item-menu-icon" />
                   <span>Services</span>
-                </Link>
                 </div>
+                </Link>
               </li>
               <li className="dashboard-link-item">
-                <div className="sidebar-contents__container"> 
                 <Link to="/dashboard/account">
+                <div className="sidebar-contents__container"> 
                   <RiUserSettingsLine className="link-item-menu-icon" />
                   <span>Service Account</span>
-                </Link>
                 </div>
+                </Link>
               </li>
               <li className="dashboard-link-item">
-                <div className="sidebar-contents__container">
                 <Link to="/dashboard/settlement">
+                <div className="sidebar-contents__container">
                   <RiFilePaper2Line className="link-item-menu-icon" />
                   <span>Settlements</span>
-                </Link>
                 </div>
+                </Link>
               </li>
               <li className="dashboard-link-item">
-                <div className="sidebar-contents__container">
                 <Link to="/dashboard/reports">
+                <div className="sidebar-contents__container">
                   <AiOutlineBarChart className="link-item-menu-icon" />
                   <span>Reports</span>
-                </Link>
                 </div>
+                </Link>
               </li>
               <li className="dashboard-link-text">
                 <div className="sidebar-contents__container">
@@ -216,28 +216,28 @@ const Sidebard: React.FC<Props> = ({ mobileMenuOpen }) => {
                 </div>
               </li>
               <li className="dashboard-link-item">
-                <div className="sidebar-contents__container">
                 <Link to="/dashboard/preferences">
+                <div className="sidebar-contents__container">
                   <GoSettings className="link-item-menu-icon" />
                   <span>Preferences</span>
-                </Link>
                 </div>
+                </Link>
               </li>
               <li className="dashboard-link-item">
-                <div className="sidebar-contents__container">
                 <Link to="/dashboard/pricing">
+                <div className="sidebar-contents__container">
                   <FaPercentage className="link-item-menu-icon" />
                   <span>Fees and Pricing</span>
-                </Link>
                 </div>
+                </Link>
               </li>
               <li className="dashboard-link-item">
-                <div className="sidebar-contents__container">
                 <Link to="/dashboard/logs">
+                <div className="sidebar-contents__container">
                   <RiTodoFill className="link-item-menu-icon" />
                   <span>Audit Logs</span>
-                </Link>
                 </div>
+                </Link>
               </li>
 
              {
@@ -248,20 +248,20 @@ const Sidebard: React.FC<Props> = ({ mobileMenuOpen }) => {
                   </div>
                 </li>
                 <li className="dashboard-link-item">
-                  <div className="sidebar-contents__container">
                   <Link to="/dashboard/docs">
+                  <div className="sidebar-contents__container">
                     <IoDocumentAttachOutline className="link-item-menu-icon" />
                     <span>Docs</span>
-                  </Link>
                   </div>
+                  </Link>
                 </li>
                 <li className="dashboard-link-item">
-                  <div className="sidebar-contents__container">
                   <Link to="/dashboard/notification">
+                  <div className="sidebar-contents__container">
                     <IoMdNotificationsOutline className="link-item-menu-icon" />
                     <span>Notifications</span>
-                  </Link>
                   </div>
+                  </Link>
                 </li>
                 <li className="dashboard-link-item">
                   <div className="sidebar-contents__container">
