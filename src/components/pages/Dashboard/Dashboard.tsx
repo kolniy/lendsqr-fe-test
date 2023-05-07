@@ -9,8 +9,13 @@ const Dashboard = () => {
   return <>
     <Layout> 
       <div className="dashboard-page__contents">
-        jjjjfjff
-        and some more text here....
+        <div style={{
+          height: '100%',
+          width: '100%',
+          display:'flex',
+          alignItems: 'center',
+          justifyContent: 'center'
+        }}><p>dashboard Page is currently under construction</p></div>
       </div>
     </Layout>
   </>

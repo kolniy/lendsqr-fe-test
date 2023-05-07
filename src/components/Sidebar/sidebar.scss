@@ -74,6 +74,10 @@
             color: $color-secondary;
         }
 
+        .dashboard-menu {
+            margin-bottom: 1.7rem;
+        }
+
         .dashboard-link-item:hover{
             background-color: $color-primary-light;
             border-left: 5px solid $color-primary;
@@ -124,17 +128,6 @@
     color: $color-secondary;
 }
 
-.sidebar-mobile {
-    position: fixed;
-    width: 283px;
-    height: calc(100vh - 100px);
-    overflow-y: auto;
-    background-color: $color-background;
-    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.04);
-    transition: all .4s;
-    z-index: 1000 !important;
-}
-
 .organization-switcher__container {
     width: 100%;
     margin-top: 2rem;
@@ -166,6 +159,33 @@
     }
 }
 
+.sidebar-mobile {
+    position: fixed;
+    width: 283px;
+    height: calc(100vh - 100px);
+    overflow-y: auto;
+    background-color: $color-background;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.04);
+    transition: all .4s;
+    z-index: 1000 !important;
+
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
+      
+    &::-webkit-scrollbar-track {
+        background-color: #f1f1f1;
+    }
+      
+    &::-webkit-scrollbar-thumb {
+        background-color: rgba(84, 95, 125, 0.15);
+        border-radius: 10px;
+    }
+      
+    &::-webkit-scrollbar-thumb:hover {
+        background-color: #555;
+    }
+}
 
 @media screen and (max-width: 992px) {
     .sidebar {

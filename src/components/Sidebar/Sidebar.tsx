@@ -53,8 +53,8 @@ const Sidebard: React.FC<Props> = ({ mobileMenuOpen }) => {
         </div>
 
         <div className="sidebar-menu">
-            <div className="dashboard-link-item">
-              <Link to="/dashboard/index">
+            <div className="dashboard-link-item dashboard-menu">
+              <Link to="/dashboard/home">
               <div className="sidebar-contents__container">
                   <IoHomeOutline className="link-item-menu-icon" />
                     <span>Dashboard</span>

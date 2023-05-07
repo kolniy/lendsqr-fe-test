@@ -79,10 +79,11 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 0 5rem;
+        padding: 0 4rem;
 
         .navbar-search-input {
             width: 400px;
+            margin-left: 1.67rem;
         }
 
         .form-input__container {
