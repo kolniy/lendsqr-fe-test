@@ -4,6 +4,7 @@ import { HiOutlineUsers } from "react-icons/hi"
 import { FaUsers, FaDatabase } from "react-icons/fa"
 import { VscGitPullRequestNewChanges } from "react-icons/vsc"
 import { IoMdFunnel } from "react-icons/io"
+import { IoChevronBackSharp, IoChevronForwardSharp } from "react-icons/io5"
 import Layout from '../../DashboardLayout/Layout'
 import UserItem from "./UserItem"
 import Loader from "../../Loader/Loader"
@@ -36,6 +37,58 @@ const status = ['inactive', 'pending', 'blacklisted', 'active'];
       alert("Error Loading user data")
       console.log("error loading user data")
     }
+  }
+
+  const selectPageHandle = (selectedPage: number) => {
+    if(selectedPage >= 1 && selectedPage <= users.length / userDisplayCount && selectedPage !== page){
+      setPage(selectedPage)
+    }
+  }
+
+  const generatePageListing = () => {
+    const totalPages = Math.ceil(users.length / userDisplayCount)
+    const pageNumbers = []
+    for (var i = 1; i <= totalPages; i++){
+      pageNumbers.push(i)
+    }
+  
+    const summary = 1
+    const middlePage = page
+    const startPage = Math.max(1, middlePage - summary)
+    const endPage = Math.min(totalPages, middlePage + summary)
+
+    const renderPageNumbers = [];
+    if (startPage > 1) {
+      renderPageNumbers.push(
+          <div  key={1} className="pagination-count__item" onClick={() => selectPageHandle(1)}>
+            1
+          </div>
+      );
+      if (startPage > 2) {
+        renderPageNumbers.push(<div className="pagination-count__item" key={"start-ellipsis"}>...</div>);
+      }
+    }
+
+    for (let i = startPage; i <= endPage; i++) {
+      const isActive = page === i;
+      renderPageNumbers.push(
+        <div key={i} className={`pagination-count__item ${isActive && 'pagination-active__count'}`} onClick={() => selectPageHandle(i)}>
+            {i}
+        </div>
+      );
+    }
+
+    if (endPage < totalPages) {
+      if (endPage < totalPages - 1) {
+        renderPageNumbers.push(<div className="pagination-ellipsis" key={"end-ellipsis"}>...</div>);
+      }
+      renderPageNumbers.push(
+        <div className="pagination-count__item" key={totalPages} onClick={() => selectPageHandle(totalPages)}>
+            {totalPages}
+        </div>
+      );
+    }
+    return renderPageNumbers
   }
 
   useEffect(() => {
@@ -118,6 +171,13 @@ const status = ['inactive', 'pending', 'blacklisted', 'active'];
                                 <option value={100}>100</option>
                               </select>
                             <p>out of {users.length}</p>
+                          </div>
+                          <div className="pagination-actions">
+                            <div onClick={() => selectPageHandle(page - 1)} className="btn-handler"><IoChevronBackSharp className="page-icon-control" /></div>
+                            {
+                              generatePageListing()
+                            }
+                            <div onClick={() => selectPageHandle(page + 1)} className="btn-handler"><IoChevronForwardSharp className="page-icon-control" /></div>
                           </div>
                         </div>
                     </div>
