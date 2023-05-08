@@ -2,6 +2,7 @@ import Layout from '../../DashboardLayout/Layout'
 import { HiOutlineUsers } from "react-icons/hi"
 import { FaUsers, FaDatabase } from "react-icons/fa"
 import { VscGitPullRequestNewChanges } from "react-icons/vsc"
+import { IoMdFunnel } from "react-icons/io"
 
 import "../../../styles/abstract/_variables.scss"
 import "./users.scss"
@@ -48,7 +49,66 @@ const Index = () => {
                   </div>
               </div>  
               <div className="users-page-contents-display__table">
-                
+                  <div className="table-card">
+                    <div className="table-responsive">
+                    <table>
+                      <thead>
+                        <tr>
+                          <td><span className='table-head-text'>Organization <IoMdFunnel className='table-head-icon' /></span></td>
+                          <td><span className='table-head-text'>Username <IoMdFunnel className='table-head-icon' /></span></td>
+                          <td><span className='table-head-text'>Email <IoMdFunnel className='table-head-icon' /></span></td>
+                          <td><span className='table-head-text'>Phone Number <IoMdFunnel className='table-head-icon' /></span></td>
+                          <td><span className="table-head-text">Date Joined <IoMdFunnel className='table-head-icon' /></span></td>
+                          <td><span className="table-head-text">status <IoMdFunnel className='table-head-icon' /></span></td>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                        <td>Lendsqr</td>
+                        <td>Adedeji</td>
+                        <td>adedeji@lendsqr.com</td>
+                        <td>08078903721</td>
+                        <td>may 15, 2020 10:00 AM</td>
+                        <td>
+                          <span className='user-status status-inactive'>inactive</span>
+                        </td>
+                        </tr>
+                        <tr>
+                        <td>Irorun</td>
+                        <td>Debby Ogana</td>
+                        <td>debby2irorun.com.com</td>
+                        <td>08160780928</td>
+                        <td>Apr 30, 2020 10:00 AM</td>
+                        <td><span className="user-status status-pending">Pending</span></td>
+                        </tr>
+                        <tr>
+                        <td>Irorun</td>
+                        <td>Debby Ogana</td>
+                        <td>debby2irorun.com.com</td>
+                        <td>08160780928</td>
+                        <td>Apr 30, 2020 10:00 AM</td>
+                        <td> <span className="user-status status-blacklisted">Pending</span></td>
+                        </tr>
+                        <tr>
+                        <td>Irorun</td>
+                        <td>Debby Ogana</td>
+                        <td>debby2irorun.com.com</td>
+                        <td>08160780928</td>
+                        <td>Apr 30, 2020 10:00 AM</td>
+                        <td> <span className="user-status status-inactive">Pending</span></td>
+                        </tr>
+                        <tr>
+                        <td>Irorun</td>
+                        <td>Debby Ogana</td>
+                        <td>debby2irorun.com.com</td>
+                        <td>08160780928</td>
+                        <td>Apr 30, 2020 10:00 AM</td>
+                        <td> <span className="user-status status-active">Pending</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    </div>
+                  </div>
               </div>
             </div>
         </div>

@@ -101,7 +101,109 @@
     }
 
     &-display__table {
-        
+        margin-top: 2.5rem;
+        margin-bottom: 3rem;
+
+        .table-card {
+            width: 100%;
+            background-color: $color-background;
+            border: 1px solid rgba(33, 63, 125, 0.06);
+            box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+            border-radius: 5px;
+            padding: 0.5rem 1.6rem;
+        }
+
+        .table-responsive {
+            width: 100%;
+            height: fit-content;
+            max-height: 600px;
+            overflow-x: auto;
+            overflow-y: auto;
+
+            &::-webkit-scrollbar {
+                width: 8px;
+            }
+              
+            &::-webkit-scrollbar-track {
+                background-color: #f1f1f1;
+            }
+              
+            &::-webkit-scrollbar-thumb {
+                background-color: rgba(84, 95, 125, 0.15);
+                border-radius: 10px;
+            }
+              
+            &::-webkit-scrollbar-thumb:hover {
+                background-color: #555;
+            }
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        thead td {
+            padding: 1.5rem 0;
+            cursor: pointer;
+            .table-head-text {
+                color: $color-secondary;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 12px;
+                line-height: 14px;
+                align-items: flex-end;
+                text-transform: uppercase;
+                min-width: fit-content;
+                min-width: 130px;
+            }
+
+            .table-head-icon {
+                margin-left: .1rem;
+                font-size: 1.5rem;
+                padding-top: 8px;
+            }
+        }
+
+        tbody tr:not(:last-child) {
+            border-bottom: 1px solid rgba(33, 63, 125, 0.1);
+        }
+
+        tbody td {
+            padding: 1.455rem 0;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 13px;
+            line-height: 16px;
+            color: $color-secondary;
+            min-width: 150px;
+        }
+
+        .user-status {
+            padding: 0.4rem 1rem;
+            border-radius: 100px;
+            text-align: center;
+            font-weight: 500;
+            font-size: 13px;
+            line-height: 16px;
+        }
+
+        .status-inactive {
+            background-color: rgba($color: #545F7D, $alpha: 0.1);
+            color: #545F7D;
+        }
+        .status-pending {
+            background-color: rgba($color: #E9B200, $alpha: 0.1);
+            color: #E9B200;
+        }
+        .status-blacklisted {
+            background-color: rgba($color: #E4033B, $alpha: 0.1);
+            color: #E4033B;
+        }
+        .status-active {
+            background-color: rgba($color: #39CD62, $alpha: 0.1);
+            color: #39CD62;
+        }
     }
 }
 
@@ -109,7 +211,7 @@
 @media screen and (max-width: 1000px) {
     .users-page-contents {
         &__cards {
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
         }
     }
 }
