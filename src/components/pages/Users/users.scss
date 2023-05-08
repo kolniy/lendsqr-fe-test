@@ -6,7 +6,7 @@
     &__container {
         margin-top: 4rem !important;
         margin: 0 auto;
-        width: 90%;
+        width: 92%;
     }
 
     &__title {
@@ -110,7 +110,10 @@
             border: 1px solid rgba(33, 63, 125, 0.06);
             box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
             border-radius: 5px;
-            padding: 0.5rem 1.6rem;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            padding-left: 1.8rem;
+            padding-right: 1rem;
         }
 
         .table-responsive {
@@ -140,12 +143,16 @@
 
         table {
             border-collapse: collapse;
+            border-spacing: 10px;
             width: 100%;
         }
 
         thead td {
-            padding: 1.5rem 0;
+            padding: 1.3rem 0;
+            font-size: 11px;
             cursor: pointer;
+            vertical-align: top;
+
             .table-head-text {
                 color: $color-secondary;
                 font-style: normal;
@@ -154,8 +161,6 @@
                 line-height: 14px;
                 align-items: flex-end;
                 text-transform: uppercase;
-                min-width: fit-content;
-                min-width: 130px;
             }
 
             .table-head-icon {
@@ -163,6 +168,10 @@
                 font-size: 1.5rem;
                 padding-top: 8px;
             }
+        }
+
+        thead tr {
+            white-space: nowrap;
         }
 
         tbody tr:not(:last-child) {
@@ -174,9 +183,10 @@
             font-style: normal;
             font-weight: 400;
             font-size: 13px;
-            line-height: 16px;
             color: $color-secondary;
-            min-width: 150px;
+            width: calc(100% / 6);
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .user-status {
@@ -186,6 +196,11 @@
             font-weight: 500;
             font-size: 13px;
             line-height: 16px;
+        }
+
+        .user-item-vertical-menu {
+            cursor: pointer;
+            font-size: 15px;
         }
 
         .status-inactive {
@@ -204,6 +219,38 @@
             background-color: rgba($color: #39CD62, $alpha: 0.1);
             color: #39CD62;
         }
+
+        .pagination-summary {
+            margin-top: 1.3rem;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .pagination-dropdown__btn {
+            display: flex;
+            align-items: center;
+
+            select {
+                background: rgba(33, 63, 125, 0.1);
+                border-radius: 4px;
+                outline: none;
+                border: none;
+                color: #213F7D;
+                padding: 0.48rem 0.6rem;
+                background-position: right 50px center;
+            }
+
+            p {
+                font-style: normal;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 16px;
+                color: #545F7D;
+                margin: 0 0.7rem;
+            }
+        }
     }
 }
 
@@ -215,6 +262,12 @@
         }
     }
 }
+
+// @media screen and (max-width: 889px) {
+//         thead td,  tbody td { 
+//             // text-align: center;
+//         }
+// }
 
 @media screen and (max-width: 730px) {
     .users-page-contents {
