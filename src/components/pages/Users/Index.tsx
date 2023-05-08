@@ -18,7 +18,13 @@ const Index = () => {
   const [ userDataLoading, setUserDataLoading ] = useState<Boolean>(true)
   const [ users, setUsers ] = useState<User[]>([])
   const [ page, setPage ] = useState<number>(1)
-  const [ userDisplayCount, setUserDisplayCount ] = useState<number>(20)
+  const [ userDisplayCount, setUserDisplayCount ] = useState<number>(5)
+
+  function getRandomStatus(strings: string[]): string {
+    const index = Math.floor(Math.random() * strings.length);
+    return strings[index];
+}
+const status = ['inactive', 'pending', 'blacklisted', 'active'];
 
   const getUserData = async () => {
     try {
@@ -81,7 +87,7 @@ const Index = () => {
                     <div className="users-page-contents-display__table">
                         <div className="table-card">
                           <div className="table-responsive">
-                          <table>
+                            <table cellPadding={"20"}>
                             <thead>
                               <tr>
                                 <td><span className='table-head-text'>Organization <IoMdFunnel className='table-head-icon' /></span></td>
@@ -95,7 +101,7 @@ const Index = () => {
                             </thead>
                             <tbody>
                               {
-                                users.slice(page * userDisplayCount - userDisplayCount, page * userDisplayCount).map((user) => <UserItem key={user.id as string} user={user} />)
+                                users.slice(page * userDisplayCount - userDisplayCount, page * userDisplayCount).map((user) => <UserItem key={user.id as string} user={{ ...user, status: getRandomStatus(status) }} />)
                               }
                             </tbody>
                           </table>

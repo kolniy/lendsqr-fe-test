@@ -8,9 +8,10 @@ interface Props {
 }
 
 const UserItem: React.FC<Props> = ({ user }) => {
+
     const myDateString = `${user.createdAt}`
     const myMoment = moment(myDateString)
-    
+
   return (
     <tr>
     <td>{user.orgName}</td>
@@ -23,7 +24,7 @@ const UserItem: React.FC<Props> = ({ user }) => {
         }
     </td>
     <td>
-      <span className='user-status status-inactive'>inactive</span>
+      <span className={`user-status status-${user.status}`}>{user.status}</span>
     </td>
     <td>
       <GoKebabVertical className='user-item-vertical-menu' />

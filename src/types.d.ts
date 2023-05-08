@@ -48,4 +48,5 @@ export interface User {
     socials: socialsObject;
     education: educationsObject;
     id: String;
+    status: String;
 }
