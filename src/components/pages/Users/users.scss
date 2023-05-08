@@ -1,5 +1,131 @@
 @import "../../../styles/abstract/variables";
 
-.users-page__contents {
-    height: 105vh;
+.users-page-contents {
+    height: fit-content;
+    
+    &__container {
+        margin-top: 4rem !important;
+        margin: 0 auto;
+        width: 90%;
+    }
+
+    &__title {
+        color: $color-secondary;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 28px;
+    }
+
+    &__cards {
+        margin-top: 2rem;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.8rem;
+
+        .single-card {
+            height: 160px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            background-color: $color-background;
+            border: 1px solid rgba(33, 63, 125, 0.06);
+            box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+            border-radius: 4px;
+            padding-left: 1.6rem;
+            padding-bottom: 1rem;
+
+            &-text {
+                font-style: normal;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 16px;
+                text-transform: uppercase;
+                color: $color-secondary;
+            }
+
+            &__counter {
+                font-family: 'Work Sans';
+                font-style: normal;
+                font-weight: 600;
+                font-size: 24px;
+                line-height: 28px;
+                text-transform: uppercase;
+                color: $color-secondary;
+            }
+        }
+
+        .single-card-icon__container {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .users-icon {
+            background-color: rgba(#DF18FF, 0.2);
+        }
+
+        .single-card-icon-users {
+            font-size: 16px;
+            color: rgba($color: #DF18FF, $alpha: 0.8);
+        }
+
+        .active-user-icon {
+            background-color: rgba(#5718FF, 0.2);
+        }
+
+        .single-card-icon-active-user {
+            font-size: 16px;
+            color: rgba($color: #5718FF, $alpha: 0.8);
+        }
+
+        .user-loan-icon {
+            background-color: rgba(#F55F44, 0.2);
+        }
+
+        .single-card-icon-user-loan {
+            font-size: 16px;
+            color: rgba($color: #F55F44, $alpha: 0.8) !important;
+        }
+
+        .user-savings-icon {
+            background-color: rgba(#FF3366, 0.2);
+        }
+
+        .single-card-icon-user-savings {
+            font-size: 16px;
+            color: rgba($color: #FF3366, $alpha: 0.8);
+        }
+    }
+
+    &-display__table {
+        
+    }
+}
+
+
+@media screen and (max-width: 1000px) {
+    .users-page-contents {
+        &__cards {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+}
+
+@media screen and (max-width: 730px) {
+    .users-page-contents {
+        &__cards {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .users-page-contents {
+        &__cards {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
 }
