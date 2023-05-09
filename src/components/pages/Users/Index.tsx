@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useRef } from "react"
 import axios from "axios"
 import { HiOutlineUsers } from "react-icons/hi"
-import { FaUsers, FaDatabase } from "react-icons/fa"
+import { FaUsers, FaDatabase, FaRegCalendarAlt } from "react-icons/fa"
 import { VscGitPullRequestNewChanges } from "react-icons/vsc"
 import { IoMdFunnel } from "react-icons/io"
 import { IoChevronBackSharp, IoChevronForwardSharp } from "react-icons/io5"
 import Layout from '../../DashboardLayout/Layout'
-import UserItem from "./UserItem"
+import UseritemContainer from "./UseritemContainer"
 import Loader from "../../Loader/Loader"
 
 import { User } from "../../../types"
@@ -17,15 +17,13 @@ import "./users.scss"
 const Index = () => {
 
   const [ userDataLoading, setUserDataLoading ] = useState<Boolean>(true)
+  const [ displayFilter, setDisplayFilter ] = useState<Boolean>(false)
   const [ users, setUsers ] = useState<User[]>([])
   const [ page, setPage ] = useState<number>(1)
   const [ userDisplayCount, setUserDisplayCount ] = useState<number>(5)
+  const formRef = useRef<HTMLFormElement>(null)
 
-  function getRandomStatus(strings: string[]): string {
-    const index = Math.floor(Math.random() * strings.length);
-    return strings[index];
-}
-const status = ['inactive', 'pending', 'blacklisted', 'active'];
+  const toggleDisplayFilter = () => setDisplayFilter(!displayFilter)
 
   const getUserData = async () => {
     try {
@@ -91,6 +89,15 @@ const status = ['inactive', 'pending', 'blacklisted', 'active'];
     return renderPageNumbers
   }
 
+  const handleFormReset = () => {
+    formRef.current!.reset()
+  }
+
+  const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+      e.preventDefault()
+      alert("filters submitted")
+  }
+
   useEffect(() => {
     getUserData()
   }, [])
@@ -139,24 +146,72 @@ const status = ['inactive', 'pending', 'blacklisted', 'active'];
                     </div>  
                     <div className="users-page-contents-display__table">
                         <div className="table-card">
+                        {
+                                displayFilter && <div className="filter-container">
+                                  <form ref={formRef} onReset={handleFormReset} onSubmit={handleFormSubmit}>
+                                    <div className="user-filter-form-group">
+                                        <label>Organization</label>
+                                        <select className="user-filter-input">
+                                          <option value={""}>Select</option>
+                                          <option value={""}>Select</option>
+                                          <option value={""}>Select</option>
+                                        </select>
+                                    </div>
+                                    <div className="user-filter-form-group">
+                                      <label>Username</label>
+                                      <input type="text" placeholder="User" className="user-filter-input" />
+                                    </div>
+                                    <div className="user-filter-form-group">
+                                      <label>Email</label>
+                                      <input type="email" placeholder="email" className="user-filter-input" />
+                                    </div>
+                                    <div className="user-filter-form-group">
+                                      <label>Date</label>
+                                      <div className="user-filter-input-container">
+                                        <input id="date-input" placeholder="Date" type="text" className="filter-date-picker__input"  />
+                                        <div className="filter-icon-container">
+                                            <FaRegCalendarAlt className="filter-icon" />
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div className="user-filter-form-group">
+                                         <label>Phone Number</label>
+                                        <input type="text" placeholder="Phone Number" className="user-filter-input" />
+                                    </div>
+                                    <div className="user-filter-form-group">
+                                        <label>Status</label>
+                                        <select className="user-filter-input">
+                                          <option value={""}>Select</option>
+                                          <option value={""}>Select</option>
+                                          <option value={""}>Select</option>
+                                        </select>
+                                    </div>
+                                    <div className="btn-group-form-control">
+                                        <button type="reset" className="btn btn-reset">Reset</button>
+                                        <button type="submit" className="btn btn-filter">Filter</button>
+                                    </div>
+                                  </form>
+                                </div>
+                              }
                           <div className="table-responsive">
-                            <table cellPadding={"20"}>
+                            <table>
                             <thead>
                               <tr>
-                                <td><span className='table-head-text'>Organization <IoMdFunnel className='table-head-icon' /></span></td>
-                                <td><span className='table-head-text'>Username <IoMdFunnel className='table-head-icon' /></span></td>
-                                <td><span className='table-head-text'>Email <IoMdFunnel className='table-head-icon' /></span></td>
-                                <td><span className='table-head-text'>Phone Number <IoMdFunnel className='table-head-icon' /></span></td>
-                                <td><span className="table-head-text">Date Joined <IoMdFunnel className='table-head-icon' /></span></td>
-                                <td><span className="table-head-text">status <IoMdFunnel className='table-head-icon' /></span></td>
+                                <td onClick={toggleDisplayFilter}><span className='table-head-text'>Organization <IoMdFunnel className='table-head-icon' /></span></td>
+                                <td onClick={toggleDisplayFilter}><span className='table-head-text'>Username <IoMdFunnel className='table-head-icon' /></span></td>
+                                <td onClick={toggleDisplayFilter}><span className='table-head-text'>Email <IoMdFunnel className='table-head-icon' /></span></td>
+                                <td onClick={toggleDisplayFilter}><span className='table-head-text'>Phone Number <IoMdFunnel className='table-head-icon' /></span></td>
+                                <td onClick={toggleDisplayFilter}><span className="table-head-text">Date Joined <IoMdFunnel className='table-head-icon' /></span></td>
+                                <td onClick={toggleDisplayFilter}><span className="table-head-text">status <IoMdFunnel className='table-head-icon' /></span></td>
                                 <td style={{ visibility: 'hidden'}}><span className="table-head-text">status <IoMdFunnel className='table-head-icon' /></span></td>
                               </tr>
                             </thead>
-                            <tbody>
-                              {
-                                users.slice(page * userDisplayCount - userDisplayCount, page * userDisplayCount).map((user) => <UserItem key={user.id as string} user={{ ...user, status: getRandomStatus(status) }} />)
-                              }
-                            </tbody>
+                            <UseritemContainer
+                              users={users}
+                              userDataLoading={userDataLoading}
+                              userDisplayCount={userDisplayCount}
+                              page={page}
+                            />
                           </table>
                           </div>
                         </div>
@@ -189,4 +244,4 @@ const status = ['inactive', 'pending', 'blacklisted', 'active'];
   </>
 }
 
-export default Index
+export default React.memo(Index)

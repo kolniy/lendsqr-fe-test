@@ -104,6 +104,15 @@
         margin-top: 2.5rem;
         margin-bottom: 3rem;
 
+        .error-text {
+            color: #723dff;   
+            text-align: center;
+            font-weight: 500;
+            width: 100%;
+            margin: 1.2rem 0;
+            font-size: 12.5px;
+        }
+
         .table-card {
             width: 100%;
             background-color: $color-background;
@@ -114,12 +123,137 @@
             padding-bottom: 0.5rem;
             padding-left: 1.8rem;
             padding-right: 1rem;
+            position: relative;
+
+            .filter-container {
+                position: absolute;
+                height: fit-content;
+                width: 290px;
+                padding: 1rem 2rem;
+                z-index: 100;
+                margin-top: 3.8rem;
+                background: $color-background;
+                border: 1px solid rgba(84, 95, 125, 0.14);
+                box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+                border-radius: 4px
+            }
+
+            .user-filter-form-group {
+                width: 100%;
+                margin: 1.2rem 0;
+                display: flex;
+                flex-direction: column;
+
+                label {
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 14px;
+                    line-height: 16px;
+                    color: $color-secondary;
+                    margin-bottom: 6px;
+                }
+
+                .user-filter-input {
+                    padding: 0.625rem 0.9rem;
+                    font-size: .875rem;
+                    font-weight: 400;
+                    line-height: 1.5;
+                    border-radius: 4px;
+                    border: 2px solid rgba(84, 95, 125, 0.15);
+                    outline: none;
+                    width: 100%;
+                    color: $color-secondary;
+                    opacity: 0.7;
+                    border-radius: 8px;
+                }
+
+                .user-filter-input::placeholder {
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 13px;
+                    opacity: 0.5;
+                    color: $color-secondary;
+                    opacity: 0.7;
+                }
+
+                .user-filter-input-container {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    height: 46px;
+                    font-weight: 400;
+                    line-height: 1.5;
+                    border-radius: 4px;
+                    border: 2px solid rgba(84, 95, 125, 0.15);
+                    width: 100%;
+                    color: $color-secondary;
+                }
+
+                .filter-date-picker__input {
+                    height: 100%;
+                    width: 100%;
+                    padding: 0.625rem 0.9rem;
+                    font-size: .875rem;
+                    outline-width: 0;
+                    border: none;
+                    color: $color-secondary;
+
+                    &::placeholder {
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 13px;
+                        opacity: 0.5;
+                        color: $color-secondary;
+                    }
+                }
+
+                .filter-icon-container {
+                    margin-right: 0.5rem;
+                    .filter-icon {
+                        font-weight: 700;
+                        font-size: 1.1rem;
+                    }
+                }
+                
+            }
+            .btn-group-form-control {
+                display: flex;
+                width: 100%;
+                margin: 1.2rem 0;
+                height: fit-content;
+
+                .btn {
+                    width: 100%;
+                    border: none;
+                    border-radius: 5px;
+                    font-weight: 600;
+                    text-transform: capitalize;
+                    font-size: 14px;
+                    height: 44px;
+                    cursor: pointer;
+                    text-align: center;
+                    line-height: 16px;
+                }
+
+                .btn-reset {
+                    background-color: $color-background;
+                    color: $color-secondary;
+                    border: 1px solid $color-secondary;
+                    margin-right: 5px;
+                }
+
+                .btn-filter {
+                    background-color: $color-primary;
+                    color: $color-background;
+                    margin-left: 5px;
+                }
+            }
         }
 
         .table-responsive {
             width: 100%;
             height: fit-content;
-            max-height: 480px;
+            max-height: 67vh;
             overflow-x: auto;
             overflow-y: auto;
             position: relative;
@@ -154,6 +288,7 @@
             font-size: 11px;
             cursor: pointer;
             vertical-align: top;
+            position: relative;
 
             .table-head-text {
                 color: $color-secondary;
@@ -163,7 +298,7 @@
                 line-height: 14px;
                 align-items: flex-end;
                 text-transform: uppercase;
-            }
+            }           
 
             .table-head-icon {
                 margin-left: .1rem;
@@ -185,13 +320,14 @@
         }
         
         tbody td {
-            padding: 1.455rem 0;
+            padding: 1.32rem 0;
             font-style: normal;
             font-weight: 400;
             font-size: 13px;
             color: $color-secondary;
             position: relative;
-            padding-right: 1.11123rem;
+            // padding-right: 1.11123rem;
+            padding-right: 0.79999rem;
             .item-menu__container {
                 position: absolute;                
                 width: fit-content !important;
@@ -316,6 +452,7 @@
             font-size: 16px;
             line-height: 19px;
             color: rgba($color: #545f7d, $alpha: 0.6);
+            cursor: pointer;
         }
 
         .pagination-active__count {
@@ -333,12 +470,6 @@
         }
     }
 }
-
-// @media screen and (max-width: 889px) {
-//         thead td,  tbody td { 
-//             // text-align: center;
-//         }
-// }
 
 @media screen and (max-width: 730px) {
     .users-page-contents {
