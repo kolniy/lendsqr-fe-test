@@ -122,6 +122,7 @@
             max-height: 480px;
             overflow-x: auto;
             overflow-y: auto;
+            position: relative;
 
             &::-webkit-scrollbar {
                 width: 8px;
@@ -145,6 +146,7 @@
             border-collapse: collapse;
             border-spacing: 10px;
             width: 100%;
+            position: relative;
         }
 
         thead td {
@@ -178,19 +180,49 @@
             border-bottom: 1px solid rgba(33, 63, 125, 0.1);
         }
 
+        tbody tr {
+            position: relative;
+        }
+        
         tbody td {
             padding: 1.455rem 0;
             font-style: normal;
             font-weight: 400;
             font-size: 13px;
             color: $color-secondary;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-        
-        tbody td {
+            position: relative;
             padding-right: 1.11123rem;
+            .item-menu__container {
+                position: absolute;                
+                width: fit-content !important;
+                padding: 0.7rem 0.8rem;
+                z-index: 1000;
+                border-radius: 5px;
+                background: $color-background;
+                border: 2px solid rgba(84, 95, 125, 0.04);
+                box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+                border-radius: 4px;
+                margin-top: 1.7rem;
+
+                div {
+                    white-space: nowrap;
+                    margin: 0.889rem 0.6rem;
+                    display: flex;
+                    cursor: pointer;
+                    font-style: normal;
+                    text-transform: capitalize;
+                    font-weight: 500;
+                    font-size: 14px;
+                    line-height: 16px;
+                    color: #213F7D;
+                }
+
+                .menu-icon {
+                    margin-right: 0.5rem;
+                }
+            }
         }
+
 
         .user-status {
             padding: 0.4rem 1rem;
@@ -313,6 +345,16 @@
         &__cards {
             grid-template-columns: repeat(2, 1fr);
         }
+    }
+
+    .pagination-summary {
+        flex-direction: column;
+    }
+
+    .pagination-dropdown__btn,
+     .pagination-actions  {
+        width: 100% !important;
+        margin: 0.5rem 0;
     }
 }
 

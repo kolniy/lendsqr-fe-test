@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import moment from "moment"
 import { GoKebabVertical } from "react-icons/go"
 import { User } from '../../../types'
+import { FiEye, FiUserCheck, FiUserX } from "react-icons/fi"
 
 interface Props {
     user: User
@@ -12,6 +14,14 @@ const UserItem: React.FC<Props> = ({ user }) => {
     const myDateString = `${user.createdAt}`
     const myMoment = moment(myDateString)
 
+    const [ showItemMenu, setShowItemMenu ] = useState<Boolean>(false)
+    const toggleShowItemMenu = () => setShowItemMenu(!showItemMenu)
+    const navigate = useNavigate()
+
+    const handleViewUserDetailHandler = () => {
+      navigate(`/dashboard/user/${user.id}`)
+    }
+     
   return (
     <tr>
     <td>{user.orgName}</td>
@@ -25,10 +35,16 @@ const UserItem: React.FC<Props> = ({ user }) => {
     </td>
     <td>
       <span className={`user-status status-${user.status}`}>{user.status}</span>
+        { 
+            showItemMenu && <div className="item-menu__container">
+            <div onClick={handleViewUserDetailHandler}><FiEye className='menu-icon' /> <p>View Details</p></div>
+            <div><FiUserCheck className='menu-icon' /> <p>Blacklist User</p></div>
+            <div><FiUserX className='menu-icon' /> <p>Activate User</p></div>
+        </div>}
     </td>
-    <td>
-      <GoKebabVertical className='user-item-vertical-menu' />
-    </td>
+      <td onClick={() => toggleShowItemMenu()}>
+        <GoKebabVertical className='user-item-vertical-menu' />
+      </td>
     </tr>
   )
 }
