@@ -5,6 +5,7 @@ import './App.scss';
 import Login from './components/Login/Login';
 import Dashboard from './components/pages/Dashboard/Dashboard';
 import UserPage from "./components/pages/Users/Index"
+import SingleUserDetailsPage from './components/pages/Users/SingleUserDetailsPage';
 import Guarantorspage from "./components/pages/Guarantors/Index"
 import LoansPage from "./components/pages/Loans/Index"
 import DecisionModelsPage from "./components/pages/DecisionModels/Index"
@@ -36,6 +37,7 @@ function App() {
           <Route path="/" element={<Login />} />
           <Route path='/dashboard/home' element={<Dashboard />} />
           <Route path="/dashboard/users" element={<UserPage />} />
+          <Route path="/dashboard/users/:userId" element={<SingleUserDetailsPage />} />
           <Route path="/dashboard/guarantors" element={<Guarantorspage />} />
           <Route path="/dashboard/loan" element={<LoansPage />} />
           <Route path="/dashboard/model" element={<DecisionModelsPage />} />

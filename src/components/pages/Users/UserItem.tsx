@@ -19,7 +19,7 @@ const UserItem: React.FC<Props> = ({ user }) => {
     const navigate = useNavigate()
 
     const handleViewUserDetailHandler = () => {
-      navigate(`/dashboard/user/${user.id}`)
+      navigate(`/dashboard/users/${user.id}`)
     }
      
   return (
