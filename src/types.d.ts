@@ -1,52 +1,52 @@
 
 type profileObject = {
-    firstName: String;
-    lastName: String;
-    phoneNumber: String;
-    avatar: String;
-    gender: String;
-    bvn: String;
-    address: String;
-    currency: String;
+    firstName: string;
+    lastName: string;
+    phoneNumber: string;
+    avatar: string;
+    gender: string;
+    bvn: string;
+    address: string;
+    currency: string;
 }
 
 type guarantorsObject = {
-    firstName: String;
-    lastName: String;
-    phoneNumber: String;
-    gender: String;
-    address: String;
+    firstName: string;
+    lastName: string;
+    phoneNumber: string;
+    gender: string;
+    address: string;
 }
 
 type socialsObject = {
-    facebook: String;
-    instagram: String;
-    twitter: String;
+    facebook: string;
+    instagram: string;
+    twitter: string;
 }
 
 type educationsObject = {
-    level: String;
-    employmentStatus: String;
-    sector: String;
-    duration: String;
-    officeEmail: String;
-    monthlyIncome: Array<String>;
-    loanRepayment: String;
+    level: string;
+    employmentStatus: string;
+    sector: string;
+    duration: string;
+    officeEmail: string;
+    monthlyIncome: Array<string>;
+    loanRepayment: string;
 }
 
 export interface User {
-    createdAt: String;
-    orgName: String;
-    userName: String;
-    email: String;
-    phoneNumber: String;
-    lastActiveDate: String;
+    createdAt: string;
+    orgName: string;
+    userName: string;
+    email: string;
+    phoneNumber: string;
+    lastActiveDate: string;
     profile: profileObject;
     guarantor: guarantorsObject;
-    accountBalance: String;
-    accountNumber: String;
+    accountBalance: string;
+    accountNumber: string;
     socials: socialsObject;
     education: educationsObject;
-    id: String;
-    status: String;
+    id: string;
+    status: string;
 }
