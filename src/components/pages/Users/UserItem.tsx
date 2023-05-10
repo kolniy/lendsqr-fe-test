@@ -14,7 +14,7 @@ const UserItem: React.FC<Props> = ({ user }) => {
     const myDateString = `${user.createdAt}`
     const myMoment = moment(myDateString)
 
-    const [ showItemMenu, setShowItemMenu ] = useState<Boolean>(false)
+    const [ showItemMenu, setShowItemMenu ] = useState<boolean>(false)
     const toggleShowItemMenu = () => setShowItemMenu(!showItemMenu)
     const navigate = useNavigate()
 

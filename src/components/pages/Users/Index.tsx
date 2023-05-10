@@ -16,15 +16,20 @@ import "./users.scss"
 
 const Index = () => {
 
+  // page loading indication variable. used to display Loader component or
+  // page contents after loading is completed.
   const [ userDataLoading, setUserDataLoading ] = useState<Boolean>(true)
   const [ displayFilter, setDisplayFilter ] = useState<Boolean>(false)
   const [ users, setUsers ] = useState<User[]>([])
-  const [ page, setPage ] = useState<number>(1)
-  const [ userDisplayCount, setUserDisplayCount ] = useState<number>(5)
+  const [ page, setPage ] = useState<number>(1) // default pagination page
+  const [ userDisplayCount, setUserDisplayCount ] = useState<number>(5) // default number of user details to display
+  // on page render
   const formRef = useRef<HTMLFormElement>(null)
 
+  // toggle to control the display of the filter component.
   const toggleDisplayFilter = () => setDisplayFilter(!displayFilter)
 
+  //  get users Data from mock API 
   const getUserData = async () => {
     try {
       const response = await axios.get("https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1/users")
@@ -43,6 +48,7 @@ const Index = () => {
     }
   }
 
+  // function to generate pagination page number 
   const generatePageListing = () => {
     const totalPages = Math.ceil(users.length / userDisplayCount)
     const pageNumbers = []
