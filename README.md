@@ -1,5 +1,7 @@
 # LendSqr FE Dashboard Page Design Project
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/17711af3-9e17-4a63-ad56-d745166b5589/deploy-status)](https://app.netlify.com/sites/kolawole-olaniyi-lendsqr-fe-test/deploys)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). and was built with React, typescript, scss.
 
 ## Table of Contents
