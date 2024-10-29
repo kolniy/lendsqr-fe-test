@@ -1,0 +1,37 @@
+.dashboard-layout {
+    height: 100vh;
+    position: relative;
+
+    &__page-contents {
+        width: 100%;
+        height: fit-content;
+        display: flex;        
+        position: relative;
+    }
+
+    &__main-contents {
+        flex: 1;
+        height: calc(100vh - 100px);
+        overflow-y: auto;
+        background-color: #fbfbfb;
+
+
+        &::-webkit-scrollbar {
+            width: 8px;
+        }
+          
+        &::-webkit-scrollbar-track {
+            background-color: #f1f1f1;
+        }
+          
+        &::-webkit-scrollbar-thumb {
+            background-color: rgba(84, 95, 125, 0.15);
+            border-radius: 10px;
+        }
+          
+        &::-webkit-scrollbar-thumb:hover {
+            background-color: #555;
+        }
+    }
+}
+

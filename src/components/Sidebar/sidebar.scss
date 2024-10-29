@@ -1,0 +1,253 @@
+@import "../../styles/abstract/variables";
+
+.sidebar {
+    width: 283px;
+    height: calc(100vh - 100px);
+    overflow-y: auto;
+    background-color: $color-background;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.04);
+    transition: all .25s;
+    z-index: 1000 !important;
+
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
+      
+    &::-webkit-scrollbar-track {
+        background-color: #f1f1f1;
+    }
+      
+    &::-webkit-scrollbar-thumb {
+        background-color: rgba(84, 95, 125, 0.15);
+        border-radius: 10px;
+    }
+      
+    &::-webkit-scrollbar-thumb:hover {
+        background-color: #555;
+    }
+    
+    &-contents__container {
+        width: 86%;
+        margin: 0 auto;
+    }
+
+    &-menu {
+        width: 100%;
+        margin-top: 1.8rem;
+
+        .dashboard-link {
+            width: 100%;
+        }
+
+        .dashboard-link-item {
+            display: flex;
+        }
+
+        .link-item-menu-icon {
+            margin-right: 10px;
+            color: $color-secondary;
+            font-size: 13px;
+            opacity: 0.7;
+        }
+
+        .nav-links {
+            width: 100%;
+        }
+
+        .dashboard-link-text {
+            width: 100%;
+            margin: 1rem 0;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 13px;
+            text-transform: uppercase;
+            line-height: 14px;
+            color: $color-secondary;
+        }
+
+        .dashboard-link-item {
+            width: 100%;
+            cursor: pointer;
+            padding: 0.85rem 5px;
+            border-left: 5px solid transparent;
+            transition: all .3s;
+            color: $color-secondary;
+        }
+
+        .dashboard-menu {
+            margin-bottom: 1.7rem;
+        }
+
+        .dashboard-link-item:hover{
+            background-color: $color-primary-light;
+            border-left: 5px solid $color-primary;
+        }
+
+        .dashboard-link-item a {
+            text-decoration: none;
+            font-style: normal;
+            font-weight: 300;
+            font-size: 15px;
+            line-height: 19px;
+            color: $color-secondary;
+            width: 100%;
+        }
+
+        .active {
+            background-color: $color-primary-light;
+            border-left: 5px solid $color-primary;
+        }
+    }
+}
+
+.loggedin-user__info {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.logged-user-img {
+    margin: 0 5px;
+}
+
+.logged-user-img img {
+    border-radius: 50%;
+}
+
+.logged-user-name {
+    font-weight: 500;
+    font-size: 16.5px;
+    line-height: 19px;
+    color: $color-secondary;
+    margin: 0 4px;
+}
+
+.navbar-dropdown__icon {
+    font-size: 22px;
+    margin: 0 2px;
+    color: $color-secondary;
+}
+
+.organization-switcher__container {
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.organization-switcher {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    cursor: pointer;
+
+    p {
+        color: $color-secondary;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 19px;
+    }
+
+    .pre-icon {
+        margin-right: 5px;
+        color: $color-secondary;
+    }
+
+    .post-icon {
+        margin-left: 4px;
+        font-size: 28px;
+        color: $color-secondary;
+    }
+}
+
+.sidebar-mobile {
+    position: fixed;
+    width: 283px;
+    height: calc(100vh - 100px);
+    overflow-y: auto;
+    background-color: $color-background;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.04);
+    transition: all .4s;
+    z-index: 1000 !important;
+
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
+      
+    &::-webkit-scrollbar-track {
+        background-color: #f1f1f1;
+    }
+      
+    &::-webkit-scrollbar-thumb {
+        background-color: rgba(84, 95, 125, 0.15);
+        border-radius: 10px;
+    }
+      
+    &::-webkit-scrollbar-thumb:hover {
+        background-color: #555;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .sidebar {
+        width: 0;
+        position: fixed;
+
+        &::-webkit-scrollbar {
+            width: 8px;
+        }
+          
+        &::-webkit-scrollbar-track {
+            background-color: #f1f1f1;
+        }
+          
+        &::-webkit-scrollbar-thumb {
+            background-color: rgba(84, 95, 125, 0.15);
+            border-radius: 10px;
+        }
+          
+        &::-webkit-scrollbar-thumb:hover {
+            background-color: #555;
+        }
+
+        &-menu {
+            .dashboard-link {
+                width: 100%;
+            }
+
+            .link-item-menu-icon {
+                margin-right: 10px;
+                color: $color-secondary;
+                font-size: 13px;
+                opacity: 0.7;
+            }
+        
+            .nav-links {
+                width: 100%;
+            }
+        
+            .dashboard-link-text {
+                width: 100%;
+                margin: 0.8rem 0;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 13px;
+                text-transform: uppercase;
+                line-height: 13px;
+                color: $color-secondary;
+            }
+
+            .dashboard-link-item {
+                padding: 0.75rem 5px;
+            }
+        
+            .dashboard-link-item a {
+                text-decoration: none;
+                font-style: normal;
+                font-weight: 300;
+                font-size: 13px;
+                line-height: 19px;
+                color: $color-secondary;
+            }
+        }
+    }
+}
