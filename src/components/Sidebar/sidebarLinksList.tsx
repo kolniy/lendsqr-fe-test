@@ -5,7 +5,7 @@ import { GiBank, GiBoomerangSun } from "react-icons/gi";
 import { MdOutlineGroups } from "react-icons/md";
 import { TbArrowsLeftRight } from "react-icons/tb";
 import { GiReceiveMoney } from "react-icons/gi";
-import { GoSettings } from "react-icons/go";
+import { GiSettingsKnobs } from "react-icons/gi";
 import { AiOutlineBarChart } from "react-icons/ai";
 import { IoDocumentAttachOutline } from "react-icons/io5";
 import { IoMdNotificationsOutline } from "react-icons/io";
@@ -115,7 +115,14 @@ export const sidebarLinksList: SidebarLink[] = [
   },
   {
     linkText: "Preferences",
-    icon: <GoSettings className="link-item-menu-icon" />,
+    icon: (
+      <GiSettingsKnobs
+        style={{
+          transform: "rotate(90deg)",
+        }}
+        className="link-item-menu-icon"
+      />
+    ),
     to: "/dashboard/preferences",
     isLink: true,
   },

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import moment from "moment";
-import { GoKebabVertical } from "react-icons/go";
+import { HiDotsVertical } from "react-icons/hi";
 import { User } from "../../../types";
 import { FiEye, FiUserCheck, FiUserX } from "react-icons/fi";
 
@@ -52,7 +52,7 @@ const UserItem: React.FC<Props> = ({ user, users }) => {
         )}
       </td>
       <td onClick={() => toggleShowItemMenu()}>
-        <GoKebabVertical className="user-item-vertical-menu" />
+        <HiDotsVertical className="user-item-vertical-menu" />
       </td>
     </tr>
   );
