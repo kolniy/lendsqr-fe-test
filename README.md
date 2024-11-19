@@ -94,4 +94,3 @@ To participate in this project, follow the steps below:
 ![Single User Details Page on bigger screen](https://res.cloudinary.com/kolaniyi/image/upload/v1683740565/screenshots/lensqr/details_page_mobile_3_n1jdkc.png)
 
 ![Single User Details Page on bigger screen](https://res.cloudinary.com/kolaniyi/image/upload/v1683740565/screenshots/lensqr/mobile_details_page_4_kg2ghi.png)
-# lendsqr-fe-test
